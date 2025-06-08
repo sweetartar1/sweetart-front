@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pedido Confirmado! - Sweet Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+        <!-- Encabezado -->
+        <div class="bg-gradient-to-r from-pink-500 to-purple-600 p-8 text-center text-white">
+            <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h1 class="text-3xl font-bold">¡Pedido Confirmado!</h1>
+            <p class="opacity-90 mt-2">Gracias por elegir Sweet Art</p>
+        </div>
+
+        <!-- Contenido -->
+        <div class="p-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tu pedido está en proceso</h2>
+                <p class="text-gray-600 mb-6">Hemos recibido tu pedido correctamente y ya comenzamos a prepararlo con todo el amor que nos caracteriza.</p>
+                
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8 text-left">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-blue-700">
+                                <strong>Importante:</strong> Tu pedido estará listo para retirar el <span class="font-semibold">jueves</span>. Te enviaremos un recordatorio el día anterior.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                    <h3 class="font-medium text-gray-900 mb-4">Resumen de tu pedido</h3>
+                    <div class="space-y-3">
+                        <!-- Los detalles del pedido se agregarán dinámicamente con JavaScript -->
+                        <div id="orderSummary" class="text-left">
+                            <!-- Aquí se insertará el resumen del pedido -->
+                        </div>
+                        <div class="pt-3 border-t border-gray-200 mt-3">
+                            <div class="flex justify-between text-lg font-semibold">
+                                <span>Total:</span>
+                                <span id="orderTotal">$0.00</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1">
+                                (Seña del 33%: <span id="depositAmount">$0.00</span>)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="font-medium text-gray-900 mb-3">Próximos pasos</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold mr-3">1</div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Revisión del pedido</h4>
+                                <p class="text-sm text-gray-500">Estamos revisando los detalles de tu pedido para confirmar disponibilidad.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold mr-3">2</div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Preparación</h4>
+                                <p class="text-sm text-gray-500">Nuestro equipo comenzará a preparar tus productos con ingredientes frescos.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold mr-3">3</div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">¡Tus delicias llegarán a tu ubicación!</h4>
+                                <p class="text-sm text-gray-500">Te avisaremos cuando tu pedido esté en camino para la entrega programada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg text-center">
+                <h3 class="font-medium text-gray-900 mb-3">¿Tienes alguna pregunta?</h3>
+                <p class="text-gray-600 mb-4">Estamos aquí para ayudarte. Contáctanos por WhatsApp o correo electrónico.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3">
+                    <a href="https://wa.me/5491124008301?text=Hola%20Sweet%20Art%2C%20tengo%20una%20consulta%20sobre%20mi%20pedido" class="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.498 14.382l-.002-.001a1 1 0 00-.578.347l-.008.01-1.016 1.175a10.407 10.407 0 01-3.85-3.043 10.407 10.407 0 01-2.87-7.672l1.15-1.029a1 1 0 00.2-1.23l-1.5-2.598a1 1 0 00-1.34-.377l-.06.033c-1.334.77-2.23 1.9-2.66 3.21-.68 2.05-.24 4.53 1.32 7.44a19.092 19.092 0 005.62 6.77 19.092 19.092 0 006.77 2.62c2.12.43 4.17.3 5.98-.37a6.002 6.002 0 002.54-1.98 1 1 0 00-.38-1.366l-2.55-1.47a1 1 0 00-1.23.2l-1.006 1.15a8.427 8.427 0 01-4.85-2.21 8.427 8.427 0 01-2.21-4.85l1.15-1.006a1 1 0 00.2-1.23l-1.47-2.55a1 1 0 00-1.37-.38z"/>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="mailto:contacto.sweetart@gmail.com?subject=Consulta%20sobre%20mi%20pedido%20Sweet%20Art&body=Hola%20Sweet%20Art%2C%0D%0A%0D%0ATengo%20una%20consulta%20sobre%20mi%20pedido%3A%0D%0A%0D%0A%0D%0A%0D%0ASaludos%2C" class="bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="bg-gray-50 px-8 py-6 border-t border-gray-200 text-center">
+            <p class="text-sm text-gray-500">
+                Gracias por confiar en Sweet Art. ¡Esperamos que disfrutes de tus productos!
+            </p>
+            <div class="mt-4">
+                <a href="index.html" class="text-pink-600 hover:text-pink-700 font-medium text-sm">
+                    ← Volver al inicio
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtener los datos del pedido de la URL
+        function getOrderFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                items: JSON.parse(decodeURIComponent(params.get('items') || '[]')),
+                total: parseFloat(params.get('total') || 0),
+                deposit: parseFloat(params.get('deposit') || 0)
+            };
+        }
+
+        // Mostrar el resumen del pedido
+        function displayOrderSummary() {
+            const order = getOrderFromUrl();
+            const orderSummary = document.getElementById('orderSummary');
+            const orderTotal = document.getElementById('orderTotal');
+            const depositAmount = document.getElementById('depositAmount');
+            
+            // Mostrar items del pedido
+            if (order.items && order.items.length > 0) {
+                // Calcular el total sumando los precios de los ítems
+                let totalCalculado = 0;
+                
+                // Generar el HTML de los ítems y calcular el total
+                orderSummary.innerHTML = order.items.map(item => {
+                    const itemTotal = item.price * item.quantity;
+                    totalCalculado += itemTotal; // Sumar al total general
+                    
+                    return `
+                        <div class="flex justify-between py-2 border-b border-gray-100">
+                            <div>
+                                <span class="font-medium">${item.name}</span>
+                                ${item.quantity > 1 ? `<span class="text-sm text-gray-500"> x${item.quantity}</span>` : ''}
+                            </div>
+                            <span>$${itemTotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                }).join('');
+                
+                // Calcular el depósito (33% del total)
+                const deposit = totalCalculado * 0.33;
+                
+                // Mostrar totales
+                orderTotal.textContent = `$${totalCalculado.toFixed(2)}`;
+                depositAmount.textContent = `$${deposit.toFixed(2)}`;
+            } else {
+                orderSummary.innerHTML = '<p class="text-gray-500">No hay productos en el pedido</p>';
+                orderTotal.textContent = '$0.00';
+                depositAmount.textContent = '$0.00';
+            }
+        }
+
+        // Inicializar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            displayOrderSummary();
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const submitButton = document.getElementById('submitButton');
+          const totalPedidoInput = document.getElementById('totalPedido');
+          const comprobante = document.getElementById('comprobante');
+          const termsCheckbox = document.getElementById('terms');
+        
+          function camposCompletos() {
+            const ids = ['nombre_local', 'nombre', 'telefono', 'email', 'direccion'];
+            return ids.every(id => {
+              const el = document.getElementById(id);
+              return el && el.value.trim() !== '';
+            });
+          }
+        
+          function actualizarTotales() {
+            let total = 0;
+            document.querySelectorAll('tr[data-product-id]').forEach(row => {
+              const price = parseFloat(row.querySelector('.price-input')?.value || 0);
+              const qty = parseInt(row.querySelector('.quantity-input')?.value || 0);
+              const subtotal = price * qty;
+              row.querySelector('.total-cell').textContent = `$${subtotal.toLocaleString('es-AR')}`;
+              total += subtotal;
+            });
+        
+            document.getElementById('grandTotal').textContent = `$${total.toLocaleString('es-AR')}`;
+            totalPedidoInput.value = total;
+          }
+        
+          function updateSubmitButton() {
+            const total = parseFloat(totalPedidoInput.value) || 0;
+            const completo = camposCompletos();
+            const archivoSubido = comprobante?.files.length > 0;
+            const aceptaTerminos = termsCheckbox ? termsCheckbox.checked : true;
+        
+            const habilitado = total > 0 && completo && archivoSubido && aceptaTerminos;
+        
+            submitButton.disabled = !habilitado;
+            submitButton.classList.toggle('bg-gray-400', !habilitado);
+            submitButton.classList.toggle('cursor-not-allowed', !habilitado);
+            submitButton.classList.toggle('bg-pink-600', habilitado);
+            submitButton.classList.toggle('hover:bg-pink-700', habilitado);
+            submitButton.classList.toggle('cursor-pointer', habilitado);
+          }
+        
+          // Eventos
+          document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('input', () => {
+              if (el.classList.contains('quantity-input')) actualizarTotales();
+              updateSubmitButton();
+            });
+            el.addEventListener('change', updateSubmitButton);
+          });
+        
+          comprobante?.addEventListener('change', updateSubmitButton);
+          actualizarTotales();
+          updateSubmitButton();
+        });
+        </script>
+        
+</body>
+
+</html>
